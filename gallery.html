@@ -12,19 +12,12 @@
             --tertiary-bg: #1a1a2e;
             --accent-purple: #9333ea;
             --accent-purple-light: #a855f7;
-            --accent-purple-dark: #7e22ce;
-            --accent-pink: #ec4899;
             --text-white: #ffffff;
             --text-gray: #a0a0b0;
             --border-color: #2a2a3e;
-            --glow-purple: rgba(147, 51, 234, 0.4);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Rajdhani', sans-serif;
@@ -40,9 +33,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -53,30 +44,28 @@
             background: rgba(10, 10, 15, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 2px solid var(--accent-purple);
-            box-shadow: 0 4px 20px rgba(147, 51, 234, 0.3);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 0.7rem 1.5rem;
         }
 
         .logo {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.1rem;
             font-weight: 900;
-            background: linear-gradient(135deg, var(--accent-purple-light), var(--accent-pink));
+            background: linear-gradient(135deg, var(--accent-purple-light), #ec4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px var(--glow-purple);
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .nav-menu {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
         }
 
@@ -84,10 +73,10 @@
             color: var(--text-white);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            padding: 0.4rem 0.8rem;
             position: relative;
-            padding: 0.5rem 1rem;
         }
 
         .nav-menu a::before {
@@ -99,47 +88,39 @@
             height: 2px;
             background: var(--accent-purple);
             transform: translateX(-50%);
-            transition: width 0.3s ease;
+            transition: width 0.3s;
         }
 
         .nav-menu a:hover::before {
             width: 100%;
         }
 
-        .nav-menu a:hover {
-            color: var(--accent-purple-light);
-            text-shadow: 0 0 10px var(--glow-purple);
-        }
-
         .container {
             position: relative;
             z-index: 1;
-            max-width: 1600px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 2rem 1.5rem;
         }
 
         .page-header {
             text-align: center;
-            margin-bottom: 3rem;
-            animation: fadeInDown 0.8s ease;
+            margin-bottom: 2rem;
         }
 
         .page-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
+            font-size: 2.2rem;
             font-weight: 900;
-            background: linear-gradient(135deg, var(--accent-purple-light), var(--accent-pink));
+            background: linear-gradient(135deg, var(--accent-purple-light), #ec4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
         }
 
         .page-subtitle {
             color: var(--text-gray);
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            font-size: 0.95rem;
         }
 
         .filter-bar {
@@ -147,162 +128,141 @@
             justify-content: space-between;
             align-items: center;
             background: rgba(21, 21, 32, 0.8);
-            backdrop-filter: blur(10px);
             border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem 2rem;
-            margin-bottom: 3rem;
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 2rem;
         }
 
         .filter-group {
             display: flex;
-            gap: 1rem;
-            align-items: center;
+            gap: 0.7rem;
         }
 
         .filter-btn {
             background: var(--tertiary-bg);
             border: 2px solid var(--border-color);
             color: var(--text-white);
-            padding: 0.7rem 1.5rem;
-            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1rem;
+            transition: all 0.2s;
+            font-size: 0.85rem;
             font-weight: 600;
         }
 
-        .filter-btn:hover,
-        .filter-btn.active {
+        .filter-btn:hover, .filter-btn.active {
             background: var(--accent-purple);
             border-color: var(--accent-purple);
-            box-shadow: 0 0 15px var(--glow-purple);
         }
 
         .search-box {
             background: var(--tertiary-bg);
             border: 2px solid var(--border-color);
-            border-radius: 8px;
-            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
             color: var(--text-white);
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1rem;
-            width: 300px;
-            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            width: 250px;
         }
 
         .search-box:focus {
             outline: none;
             border-color: var(--accent-purple);
-            box-shadow: 0 0 15px var(--glow-purple);
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            animation: fadeIn 1s ease;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .project-card {
             background: rgba(21, 21, 32, 0.8);
-            backdrop-filter: blur(10px);
             border: 2px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 8px;
             overflow: hidden;
-            transition: all 0.4s ease;
+            transition: all 0.3s;
             cursor: pointer;
         }
 
         .project-card:hover {
             border-color: var(--accent-purple);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(147, 51, 234, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(147, 51, 234, 0.3);
         }
 
         .project-thumbnail {
             width: 100%;
-            height: 250px;
+            height: 180px;
             background: linear-gradient(135deg, var(--tertiary-bg), var(--secondary-bg));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
             border-bottom: 2px solid var(--border-color);
             position: relative;
             overflow: hidden;
         }
 
-        .project-thumbnail::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .project-thumbnail canvas {
             width: 100%;
             height: 100%;
-            background: 
-                repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(147, 51, 234, 0.05) 20px, rgba(147, 51, 234, 0.05) 21px),
-                repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(147, 51, 234, 0.05) 20px, rgba(147, 51, 234, 0.05) 21px);
         }
 
         .project-info {
-            padding: 1.5rem;
+            padding: 1rem;
         }
 
         .project-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1rem;
             font-weight: 700;
             color: var(--accent-purple-light);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .project-meta {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 1rem;
-            padding-top: 1rem;
+            margin-top: 0.7rem;
+            padding-top: 0.7rem;
             border-top: 1px solid var(--border-color);
+            font-size: 0.8rem;
         }
 
         .project-date {
             color: var(--text-gray);
-            font-size: 0.9rem;
         }
 
         .project-stats {
             display: flex;
-            gap: 1rem;
-            font-size: 0.9rem;
+            gap: 0.8rem;
             color: var(--text-gray);
         }
 
         .project-actions {
             display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: 0.4rem;
+            margin-top: 0.7rem;
         }
 
         .action-icon {
             background: var(--tertiary-bg);
             border: 2px solid var(--border-color);
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
+            width: 32px;
+            height: 32px;
+            border-radius: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
+            transition: all 0.2s;
+            font-size: 0.95rem;
         }
 
         .action-icon:hover {
             background: var(--accent-purple);
             border-color: var(--accent-purple);
-            transform: scale(1.1);
         }
 
         .new-project-card {
@@ -312,55 +272,46 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 400px;
+            min-height: 320px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
         .new-project-card:hover {
             background: rgba(147, 51, 234, 0.2);
-            box-shadow: 0 20px 40px rgba(147, 51, 234, 0.3);
+            box-shadow: 0 10px 25px rgba(147, 51, 234, 0.3);
         }
 
         .new-project-icon {
-            font-size: 5rem;
+            font-size: 3rem;
             color: var(--accent-purple);
-            margin-bottom: 1rem;
+            margin-bottom: 0.7rem;
         }
 
         .new-project-text {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             color: var(--accent-purple-light);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        ::-webkit-scrollbar {
+            width: 6px;
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        ::-webkit-scrollbar-track {
+            background: var(--tertiary-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-purple);
+            border-radius: 3px;
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">⬡ NEXA CAD</div>
+            <div class="logo">NEXA CAD</div>
             <ul class="nav-menu">
                 <li><a href="index.html">Editor</a></li>
                 <li><a href="gallery.html">Galerie</a></li>
@@ -379,177 +330,111 @@
         <div class="filter-bar">
             <div class="filter-group">
                 <button class="filter-btn active">Alle</button>
-                <button class="filter-btn">Zuletzt bearbeitet</button>
+                <button class="filter-btn">Zuletzt</button>
                 <button class="filter-btn">Favoriten</button>
                 <button class="filter-btn">Geteilt</button>
             </div>
             <input type="text" class="search-box" placeholder="Projekte durchsuchen...">
         </div>
 
-        <div class="gallery-grid">
-            <!-- New Project Card -->
-            <div class="project-card new-project-card" onclick="window.location.href='index.html'">
-                <div class="new-project-icon">✦</div>
-                <div class="new-project-text">NEUES PROJEKT</div>
-            </div>
-
-            <!-- Sample Projects -->
-            <div class="project-card">
-                <div class="project-thumbnail">⬛</div>
-                <div class="project-info">
-                    <div class="project-title">Mechanisches Zahnrad</div>
-                    <div class="project-meta">
-                        <div class="project-date">Vor 2 Stunden</div>
-                        <div class="project-stats">
-                            <span>⬚ 15</span>
-                            <span>⚡ 2.4K</span>
-                        </div>
-                    </div>
-                    <div class="project-actions">
-                        <div class="action-icon" title="Öffnen">📂</div>
-                        <div class="action-icon" title="Duplizieren">⧉</div>
-                        <div class="action-icon" title="Teilen">↗</div>
-                        <div class="action-icon" title="Löschen">🗑️</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-thumbnail">⚫</div>
-                <div class="project-info">
-                    <div class="project-title">Architektur Prototyp</div>
-                    <div class="project-meta">
-                        <div class="project-date">Gestern</div>
-                        <div class="project-stats">
-                            <span>⬚ 47</span>
-                            <span>⚡ 8.1K</span>
-                        </div>
-                    </div>
-                    <div class="project-actions">
-                        <div class="action-icon" title="Öffnen">📂</div>
-                        <div class="action-icon" title="Duplizieren">⧉</div>
-                        <div class="action-icon" title="Teilen">↗</div>
-                        <div class="action-icon" title="Löschen">🗑️</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-thumbnail">⬮</div>
-                <div class="project-info">
-                    <div class="project-title">Roboter-Arm Design</div>
-                    <div class="project-meta">
-                        <div class="project-date">Vor 3 Tagen</div>
-                        <div class="project-stats">
-                            <span>⬚ 32</span>
-                            <span>⚡ 5.6K</span>
-                        </div>
-                    </div>
-                    <div class="project-actions">
-                        <div class="action-icon" title="Öffnen">📂</div>
-                        <div class="action-icon" title="Duplizieren">⧉</div>
-                        <div class="action-icon" title="Teilen">↗</div>
-                        <div class="action-icon" title="Löschen">🗑️</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-thumbnail">★</div>
-                <div class="project-info">
-                    <div class="project-title">Dekoration Stern</div>
-                    <div class="project-meta">
-                        <div class="project-date">Vor 1 Woche</div>
-                        <div class="project-stats">
-                            <span>⬚ 8</span>
-                            <span>⚡ 1.2K</span>
-                        </div>
-                    </div>
-                    <div class="project-actions">
-                        <div class="action-icon" title="Öffnen">📂</div>
-                        <div class="action-icon" title="Duplizieren">⧉</div>
-                        <div class="action-icon" title="Teilen">↗</div>
-                        <div class="action-icon" title="Löschen">🗑️</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-thumbnail">◆</div>
-                <div class="project-info">
-                    <div class="project-title">Geometrische Skulptur</div>
-                    <div class="project-meta">
-                        <div class="project-date">Vor 2 Wochen</div>
-                        <div class="project-stats">
-                            <span>⬚ 21</span>
-                            <span>⚡ 3.8K</span>
-                        </div>
-                    </div>
-                    <div class="project-actions">
-                        <div class="action-icon" title="Öffnen">📂</div>
-                        <div class="action-icon" title="Duplizieren">⧉</div>
-                        <div class="action-icon" title="Teilen">↗</div>
-                        <div class="action-icon" title="Löschen">🗑️</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-thumbnail">⚙</div>
-                <div class="project-info">
-                    <div class="project-title">Komplexes Getriebe</div>
-                    <div class="project-meta">
-                        <div class="project-date">Vor 1 Monat</div>
-                        <div class="project-stats">
-                            <span>⬚ 64</span>
-                            <span>⚡ 12.3K</span>
-                        </div>
-                    </div>
-                    <div class="project-actions">
-                        <div class="action-icon" title="Öffnen">📂</div>
-                        <div class="action-icon" title="Duplizieren">⧉</div>
-                        <div class="action-icon" title="Teilen">↗</div>
-                        <div class="action-icon" title="Löschen">🗑️</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // Filter functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            });
-        });
+        const projects = [
+            { title: 'Mechanisches Zahnrad', date: 'Vor 2 Stunden', objects: 15, vertices: 2400, geo: () => new THREE.TorusGeometry(1, 0.3, 16, 100) },
+            { title: 'Architektur Prototyp', date: 'Gestern', objects: 47, vertices: 8100, geo: () => new THREE.BoxGeometry(2, 2, 2) },
+            { title: 'Roboter-Arm Design', date: 'Vor 3 Tagen', objects: 32, vertices: 5600, geo: () => new THREE.CylinderGeometry(1, 1, 2, 32) },
+            { title: 'Dekoration Stern', date: 'Vor 1 Woche', objects: 8, vertices: 1200, geo: () => new THREE.DodecahedronGeometry(1.5) },
+            { title: 'Geometrische Skulptur', date: 'Vor 2 Wochen', objects: 21, vertices: 3800, geo: () => new THREE.IcosahedronGeometry(1.5) },
+            { title: 'Komplexes Getriebe', date: 'Vor 1 Monat', objects: 64, vertices: 12300, geo: () => new THREE.TorusGeometry(1, 0.4, 16, 100) }
+        ];
 
-        // Search functionality
-        const searchBox = document.querySelector('.search-box');
-        searchBox.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            const projectCards = document.querySelectorAll('.project-card:not(.new-project-card)');
+        function createThumbnail(geo) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 280;
+            canvas.height = 180;
+            const sc = new THREE.Scene();
+            const cam = new THREE.PerspectiveCamera(50, 280/180, 0.1, 100);
+            cam.position.set(3, 3, 3);
+            cam.lookAt(0, 0, 0);
+            const rend = new THREE.WebGLRenderer({ canvas, antialias: true });
+            rend.setSize(280, 180);
+            rend.setClearColor(0x1a1a2e);
+            sc.add(new THREE.DirectionalLight(0x9333ea, 1).position.set(5, 5, 5));
+            sc.add(new THREE.AmbientLight(0x404040, 1));
+            const mesh = new THREE.Mesh(geo(), new THREE.MeshStandardMaterial({ color: 0x9333ea, metalness: 0.4, roughness: 0.3 }));
+            sc.add(mesh);
             
-            projectCards.forEach(card => {
-                const title = card.querySelector('.project-title').textContent.toLowerCase();
-                if (title.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+            let frame = 0;
+            function anim() {
+                mesh.rotation.y += 0.02;
+                rend.render(sc, cam);
+                if (++frame < 30) requestAnimationFrame(anim);
+            }
+            anim();
+            
+            return canvas;
+        }
+
+        function initGallery() {
+            const grid = document.getElementById('galleryGrid');
+            
+            const newCard = document.createElement('div');
+            newCard.className = 'project-card new-project-card';
+            newCard.onclick = () => window.location.href = 'index.html';
+            newCard.innerHTML = '<div class="new-project-icon">✦</div><div class="new-project-text">NEUES PROJEKT</div>';
+            grid.appendChild(newCard);
+
+            projects.forEach(proj => {
+                const card = document.createElement('div');
+                card.className = 'project-card';
+                
+                const thumb = document.createElement('div');
+                thumb.className = 'project-thumbnail';
+                thumb.appendChild(createThumbnail(proj.geo));
+                
+                const info = document.createElement('div');
+                info.className = 'project-info';
+                
+                info.innerHTML = `
+                    <div class="project-title">${proj.title}</div>
+                    <div class="project-meta">
+                        <div class="project-date">${proj.date}</div>
+                        <div class="project-stats">
+                            <span>◇ ${proj.objects}</span>
+                            <span>⚡ ${(proj.vertices/1000).toFixed(1)}K</span>
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <div class="action-icon" title="Öffnen">◎</div>
+                        <div class="action-icon" title="Duplizieren">⊕</div>
+                        <div class="action-icon" title="Teilen">↗</div>
+                        <div class="action-icon" title="Löschen">×</div>
+                    </div>
+                `;
+                
+                card.appendChild(thumb);
+                card.appendChild(info);
+                card.onclick = e => {
+                    if (!e.target.classList.contains('action-icon')) {
+                        window.location.href = 'index.html';
+                    }
+                };
+                
+                grid.appendChild(card);
             });
+        }
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.onclick = () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            };
         });
 
-        // Open project
-        document.querySelectorAll('.project-card:not(.new-project-card)').forEach(card => {
-            card.addEventListener('click', (e) => {
-                if (!e.target.classList.contains('action-icon')) {
-                    window.location.href = 'index.html';
-                }
-            });
-        });
+        initGallery();
     </script>
 </body>
 </html>
